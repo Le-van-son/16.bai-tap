@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    function Rectangle(length, width) {
+        this.length = length;
+        this.width = width;
+        this.getArea = function () {
+            return this.length * this.width
+        }
+        this.getPerimeter = function () {
+            return 2 * (length + width)
+        }
+        this.draw = function () {
+            ctx = document.getElementById("myCanvas").getContext('2d');
+            ctx.strokeRect(50, 50, length, width)
+            ctx.fillStyle = '#31fa2a';    // color of fill
+            ctx.fillRect(30, 60, 5, 20); // create rectangle
+            ctx.font = "30px Time new roman";
+            ctx.fillText("Anh sơn", 150, 90, 150)
+        }
+    }
+
+
+    let rectangle = new Rectangle(50, 20)
+    let area = rectangle.getArea()
+    let perimeter = rectangle.getPerimeter()
+    rectangle.draw()
+alert("dt = " +area+ "cv" + perimeter)
+
+</script>
+</body>
+</html>
