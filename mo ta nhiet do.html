@@ -7,20 +7,21 @@
 <body>
 <script>
     function Temperature(c) {
-
-
-
         this.c = c;
-        this.chuyenf = function (){
-            return (9/5*c + 32)
-        }
-        this.chuyenk = function (){
-            return (c + 273.15)
+        if (c>-273) {
+            this.chuyenf = function (){
+                return (9/5*c + 32)
+            }
+            this.chuyenk = function (){
+                return (c + 273.15)
+            }
+        }else {
+            alert("Lỗi rồi")
         }
     }
-    let temperature = new Temperature(20)
-    let dof = temperature.chuyenf
-    let dok = temperature.chuyenk
+    let temperature = new Temperature(35)
+    let dof = temperature.chuyenf()
+    let dok = temperature.chuyenk()
     alert( "Độ F = " + dof + "Độ K =" +dok)
 </script>
 </body>
